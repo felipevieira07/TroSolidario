@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trote Solidário - 2025</title>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="./js/scripts.js"> </script>
+    </head>
+    <body>
+        <header> <!-- Cabeçalho da página -->
+            <p id="texto">Trote Solidário - 2025</p>
+            <img  src="images/trote.jpg" alt="Trote Solidário" class="imagemtrote"/>
+        </header>
+    
+        <nav>
+            <div id="links-menu">
+                <a href="index.html">Home</a>
+                <a href="introducao.html">Introdução</a>
+                <a href="objetivo.html">Objetivo</a>
+                <a href="formato.html">Formato</a>
+                <a href="gincana.html">Gincana</a>
+                <a href="integracao.html">Integração</a>
+                <a href="observacoes.html">Observações</a>
+                <a href="calculadoras.html">Calculadoras</a>
+            </div>
+            
+        </nav>
+    
+        <div class="container">
+            <h2>Calcule a pontuação da sua equipe</h2>
+            <form> <!-- Formulário para entrada de dados -->
+                <div class="campos">
+                    <label id="selecioneacor"><b>Selecione a cor da equipe</b></label>
+                    <select id="equipe">
+                        <option value="Laranja">Laranja</option>
+                        <option value="Preta">Preta</option>
+                        <option value="Roxa">Roxa</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Vermelha">Vermelho</option>
+                    </select>
+                </div>
+                <div class="campos">
+                    <label> Ação Social </label>
+                    <input class="contagem" type="number" id="acaoSocial"/>
+                </div>
+                <div class="campos">
+                        <label> Mascote do time </label>
+                        <input class="contagem" type="number" id="mascotedotime"/>
+                </div>
+                
+                <div class="campos">
+                    <label> Homenagem ao atleta  </label>
+                    <input class="contagem" type="number" id="homenagem"/>
+                </div>
+                <div class="campos">
+                    <label> Caixas de Leite (litros) </label>
+                    <input class="contagem" type="number" id="leite"/>
+                </div>
+                <div class="campos">
+                    <label> Kit alimentação </label>
+                    <input class="contagem" type="number" id="kit"/>
+                </div>
+                <div class="campos">
+                    <label> Lata de suplemento  </label>
+                    <input class="contagem" type="number" id="suplemento"/> 
+                </div>
+                <div class="campos">
+                    <label> Doação de Sangue </label>
+                    <input class="contagem" type="number" id="sangue"/>
+                </div>
+                <div class="campos">
+                    <button type="button" onclick="calcular()">Calcular</button>
+                    <label id="soma">  </label>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
