@@ -1,0 +1,89 @@
+{
+	"name": "Jogador",
+	"plugin-id": "Sprite",
+	"sid": 403635235506203,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direções",
+			"sid": 742063419881105
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "CentrarEm",
+			"sid": 954808299106845
+		},
+		{
+			"behaviorId": "bound",
+			"name": "RestritoAoLayout",
+			"sid": 575573017938317
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 165,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 232265,
+						"collisionPoly": {
+							"points": [
+								0.316,
+								0.18181818181818182,
+								0.392,
+								0.21212121212121213,
+								0.936,
+								0.7151515151515152,
+								0.932,
+								0.7636363636363637,
+								0.372,
+								0.9030303030303031,
+								0.324,
+								0.9090909090909091,
+								0.256,
+								0.9090909090909091,
+								0.152,
+								0.8484848484848485,
+								0.116,
+								0.7515151515151515,
+								0.116,
+								0.4303030303030303,
+								0.176,
+								0.26666666666666666
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Ponto de Imagem 1",
+								"x": 0.956,
+								"y": 0.7333333333333333
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 141885942169841,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

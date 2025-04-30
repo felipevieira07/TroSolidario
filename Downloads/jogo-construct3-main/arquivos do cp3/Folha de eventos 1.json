@@ -1,0 +1,626 @@
+{
+	"name": "Folha de eventos 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "zombieSpeed",
+			"type": "number",
+			"initialValue": "40",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 474225593292403
+		},
+		{
+			"eventType": "variable",
+			"name": "Pontos",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 437260404514385
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887656771558830
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 384954943231804
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Jogador",
+					"sid": 161127704158136,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Texto",
+					"sid": 324721655276497,
+					"parameters": {
+						"text": "\"Score: \" & Score & newline & \"Use arrow keys to move and click to shoot!\""
+					}
+				}
+			],
+			"sid": 610447143593451
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 786528699715823,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Jogador",
+					"sid": 354173839037954,
+					"parameters": {
+						"object": "Projétil",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 830154180659099
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Projétil",
+					"sid": 282441570415586,
+					"parameters": {
+						"object": "Zombie"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Projétil",
+					"sid": 104873090463529
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Zombie",
+					"sid": 657340999431961,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Projétil",
+					"sid": 979131340803782,
+					"parameters": {
+						"object": "Flash",
+						"layer": "\"Camada 0\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Flash",
+					"sid": 834852372217149,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 658885222560116,
+					"parameters": {
+						"variable": "zombieSpeed",
+						"value": "40"
+					}
+				}
+			],
+			"sid": 985357074805483
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 431601409411959
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "Zombie",
+					"sid": 802701338333205,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RankingDeJogadores",
+					"sid": 153645020317119,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "NomedOjogador",
+					"sid": 731412835459345,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Botão",
+					"sid": 363544112008350,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 203562992007616
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Zombie",
+					"sid": 968267004461716
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Zombie",
+					"sid": 745289659463420,
+					"parameters": {
+						"x": "Jogador.X",
+						"y": "Jogador.Y"
+					}
+				}
+			],
+			"sid": 474057335988497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Zombie",
+					"sid": 581822400897566,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Zombie",
+					"sid": 459784309532668,
+					"parameters": {
+						"object": "Projétil",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Zombie",
+					"sid": 285431850913679
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Flash",
+					"sid": 455737562149146,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 324221308402490,
+					"parameters": {
+						"variable": "Score",
+						"value": "80"
+					}
+				}
+			],
+			"sid": 742103132256879
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 917405613028457,
+					"parameters": {
+						"interval-seconds": "3.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object-by-name",
+					"objectClass": "System",
+					"sid": 217478929523339,
+					"parameters": {
+						"object-name": "\"zombie\"",
+						"layer": "0",
+						"x": "LayoutWidth + 50",
+						"y": "random(LayoutHeight)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Zombie",
+					"sid": 497909307692825,
+					"behaviorType": "Projétil",
+					"parameters": {
+						"speed": "zombieSpeed"
+					}
+				}
+			],
+			"sid": 224975662320507
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Zombie",
+					"sid": 519530274217059,
+					"parameters": {
+						"object": "Jogador"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Jogador",
+					"sid": 558884165027558
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "RankingDeJogadores",
+					"sid": 981696301641397,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "NomedOjogador",
+					"sid": 583192435113350,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Botão",
+					"sid": 297262106642528,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GameOverText",
+					"sid": 941809380999875,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 348946830440222,
+					"parameters": {
+						"tag": "\"Atualizar\"",
+						"url": "\"https://bancogamefacef-ebe25-default-rtdb.firebaseio.com/ranking.json\""
+					}
+				}
+			],
+			"sid": 909616767071989
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 851532843492912,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 870873160944058,
+					"parameters": {
+						"first-value": "Jogador.Count",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 749565518016832,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 126973183199545,
+					"parameters": {
+						"variable": "zombieSpeed",
+						"value": "80"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 137847468136255,
+					"parameters": {
+						"variable": "Score",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 987048612491008
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 419360864802038,
+					"parameters": {
+						"tag": "\"Atualizar\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 843618754943964,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 809231316515412,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "replace(Pontos,\"{\",\"\")\r"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 150365352703597,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "replace(Pontos,\":\",\": \")\r"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 523698674971863,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "replace(Pontos,\"}\",\"\")\r"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 762774042687699,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "replace(Pontos,\"\"\"\",\"\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 860024556325782,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "replace(Pontos,\",\",newline)\r"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "RankingDeJogadores",
+					"sid": 292555869003923,
+					"parameters": {
+						"text": "Pontos"
+					}
+				}
+			],
+			"sid": 619698884047050
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Botão",
+					"sid": 819715015240398
+				}
+			],
+			"actions": [
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 656506868160931,
+					"parameters": {
+						"tag": "\"Enviar\"",
+						"url": "\"https://bancogamefacef-ebe25-default-rtdb.firebaseio.com/ranking.json\"",
+						"data": "\"{\"\"\"&NomedOjogador.Text&\"\"\" : \"&Score&\"}\"",
+						"method": "\"PATCH\""
+					}
+				}
+			],
+			"sid": 884681771049341
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 891502996852837,
+					"parameters": {
+						"object": "Zombie"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 254490851099074,
+					"parameters": {
+						"first-value": "distance(Jogador.X, Jogador.Y, zombie.X, zombie.Y)",
+						"comparison": 2,
+						"second-value": "200"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-toward-position",
+					"objectClass": "Zombie",
+					"sid": 825643151646367,
+					"parameters": {
+						"degrees": "1",
+						"x": "Jogador.X",
+						"y": "Jogador.Y"
+					}
+				}
+			],
+			"sid": 109586227746233
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 135666796816172
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "GameOverText",
+					"sid": 824661220605780,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 990770479487924
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 828054710902837
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "GameOverText",
+					"sid": 667628472470414,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 696990193268512
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 702675148236186
+				}
+			],
+			"actions": [
+				{
+					"id": "lock-keyboard",
+					"objectClass": "Teclado",
+					"sid": 418367644559155,
+					"parameters": {
+						"keys": "\"Espaco\""
+					}
+				}
+			],
+			"sid": 321881474758905
+		}
+	],
+	"sid": 204691454827667
+}

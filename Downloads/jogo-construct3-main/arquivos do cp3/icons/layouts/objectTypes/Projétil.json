@@ -1,0 +1,75 @@
+{
+	"name": "Projétil",
+	"plugin-id": "Sprite",
+	"sid": 320258366239154,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Projétil",
+			"sid": 546605436259250
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestruirForaDoLayout",
+			"sid": 994552707380277
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 500,
+						"height": 500,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7270084,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.524,
+								0.014000000000000012,
+								0.42600000000000005,
+								0.634,
+								0.22999999999999998,
+								0.71,
+								0.24,
+								0.948,
+								0.384,
+								1,
+								0.478,
+								1,
+								0.548,
+								0.94,
+								0.632,
+								0.87,
+								0.6719999999999999,
+								0.65,
+								0.762
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 451079602357833,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

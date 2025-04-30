@@ -1,0 +1,10 @@
+{
+	"name": "RankingDeJogadores",
+	"plugin-id": "Text",
+	"sid": 360505411400342,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

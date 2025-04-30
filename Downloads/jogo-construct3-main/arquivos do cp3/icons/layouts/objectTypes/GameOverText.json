@@ -1,0 +1,10 @@
+{
+	"name": "GameOverText",
+	"plugin-id": "Text",
+	"sid": 582976546098914,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

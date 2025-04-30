@@ -1,0 +1,82 @@
+{
+	"name": "Zombie",
+	"plugin-id": "Sprite",
+	"sid": 665645888762000,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 489138689800202
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Projétil",
+			"sid": 851289337457500
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 318,
+						"height": 294,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 798569,
+						"collisionPoly": {
+							"points": [
+								0.4591194968553459,
+								0.24489795918367346,
+								0.5660377358490566,
+								0.25510204081632654,
+								0.7704402515723271,
+								0.35034013605442177,
+								0.7421383647798742,
+								0.7619047619047619,
+								0.4559748427672956,
+								0.8231292517006803,
+								0.3836477987421384,
+								0.7959183673469388,
+								0.24842767295597484,
+								0.6972789115646258,
+								0.2169811320754717,
+								0.6394557823129252,
+								0.18238993710691823,
+								0.5,
+								0.20754716981132076,
+								0.4387755102040816,
+								0.3018867924528302,
+								0.3129251700680272,
+								0.3710691823899371,
+								0.2687074829931973
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 964152195404253,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
